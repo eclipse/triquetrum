@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016,2019 iSencia Belgium NV.
+ * Copyright (c) 2016,2020 iSencia Belgium NV.
  *  
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *     Erwin De Ley - initial API and implementation and/or initial documentation
+ *     Christoph Läubrich - #350
  *******************************************************************************/
 package org.eclipse.triquetrum.workflow.editor.palette.spi;
 
@@ -60,6 +61,10 @@ public class PaletteConfigurationElement implements IConfigurationElement {
       this.attributes.putAll(attributes);
     }
   }
+
+	protected void putAttribute(String key, String value) {
+		attributes.put(key, value);
+	}
 
   @Override
   public Object createExecutableExtension(String propertyName) throws CoreException {

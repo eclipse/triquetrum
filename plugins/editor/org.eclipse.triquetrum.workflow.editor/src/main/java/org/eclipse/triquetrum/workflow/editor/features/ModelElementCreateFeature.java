@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016,2019 iSencia Belgium NV.
+ * Copyright (c) 2016,2020 iSencia Belgium NV.
  *  
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
@@ -9,6 +9,7 @@
  *
  * Contributors:
  *     Erwin De Ley - initial API and implementation and/or initial documentation
+ *     Christoph Läubrich - #350
  *******************************************************************************/
 package org.eclipse.triquetrum.workflow.editor.features;
 
@@ -158,14 +159,14 @@ public class ModelElementCreateFeature extends AbstractCreateFeature {
         result.setName(EditorUtils.buildUniqueName(model, elementName));
         result.setWrappedType(wrappedClass);
         // TODO review if we can live with a palette with properties without a class specification
-        for (Map.Entry<String, String> attrEntry : properties.entrySet()) {
-          String name = attrEntry.getKey();
-          String value = attrEntry.getValue();
-          result.setProperty(name, value, null);
-        }
       } else {
         result.setWrappedObject(wrappedObject);
       }
+			for (Map.Entry<String, String> attrEntry : properties.entrySet()) {
+				String name = attrEntry.getKey();
+				String value = attrEntry.getValue();
+				result.setProperty(name, value, null);
+			}
 
       if (result instanceof Director) {
         model.setDirector((Director) result);

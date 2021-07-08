@@ -113,5 +113,7 @@ Import-Package: javax.inject;version="1.0.0",
 Bundle-Activator: org.eclipse.triquetrum.workflow.editor.TriqEditorPlugin
 Service-Component: OSGI-INF/colorRendererService.xml
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.triquetrum.workflow.editor.palette.spi
+Export-Package: org.eclipse.triquetrum.workflow.editor,
+ org.eclipse.triquetrum.workflow.editor.palette,
+ org.eclipse.triquetrum.workflow.editor.palette.spi
 Eclipse-SourceReference: scm:git:https://github.com/eclipse/triquetrum.git
